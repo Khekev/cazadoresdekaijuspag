@@ -1,0 +1,1464 @@
+/* ==================================================
+   CAZADORES DE KAIJUS
+   ESTILO GAME WEBSITE — AZUL
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b0f;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    background: rgba(8, 12, 17, 0.94);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(25, 169, 255, 0.12);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    color: #ffffff;
+}
+
+.logo span {
+    display: block;
+
+    margin-top: -2px;
+
+    color: #19a9ff;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: #d3d9df;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.25s ease;
+}
+
+.navbar nav a:hover {
+    color: #19a9ff;
+}
+
+.navbar nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 0;
+    height: 2px;
+
+    background: #19a9ff;
+
+    box-shadow:
+        0 0 10px rgba(25, 169, 255, 0.6);
+
+    transition: 0.25s ease;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 150px 8% 100px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 7, 11, 0.96) 0%,
+            rgba(3, 8, 14, 0.78) 35%,
+            rgba(3, 8, 14, 0.3) 75%,
+            rgba(3, 8, 14, 0.2) 100%
+        ),
+        url("img/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(25, 169, 255, 0.18),
+            transparent 35%
+        );
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 220px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #080b0f
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    animation: heroIn 1s ease-out;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    color: #19a9ff;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 15px rgba(25, 169, 255, 0.6);
+}
+
+.hero h1 {
+    margin-bottom: 32px;
+
+    font-size: clamp(65px, 9vw, 135px);
+
+    font-weight: 900;
+
+    line-height: 0.84;
+
+    letter-spacing: -6px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.95);
+}
+
+.hero h1 span {
+    color: #19a9ff;
+
+    text-shadow:
+        0 0 25px rgba(25, 169, 255, 0.5);
+}
+
+.hero-content > p:not(.section-label) {
+    max-width: 750px;
+
+    margin-bottom: 42px;
+
+    color: #d0d8df;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+}
+
+/* ==================================================
+   BOTONES
+================================================== */
+
+.main-button,
+.play-button {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 60px;
+
+    padding: 0 42px;
+
+    background: #19a9ff;
+
+    color: #ffffff;
+
+    border: 1px solid #19a9ff;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(25, 169, 255, 0.2);
+}
+
+.main-button::before,
+.play-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.4),
+            transparent
+        );
+
+    transition: 0.5s;
+}
+
+.main-button:hover::before,
+.play-button:hover::before {
+    left: 120%;
+}
+
+.main-button:hover,
+.play-button:hover {
+    background: #ffffff;
+
+    color: #071019;
+
+    border-color: #ffffff;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(255, 255, 255, 0.15);
+}
+
+/* ==================================================
+   SECCIONES
+================================================== */
+
+.section {
+    position: relative;
+
+    padding: 135px 8%;
+
+    background: #080b0f;
+
+    overflow: hidden;
+}
+
+.section-title {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 70px;
+}
+
+.section-title h2 {
+    max-width: 1000px;
+
+    margin-bottom: 28px;
+
+    font-size: clamp(50px, 6vw, 82px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+}
+
+.section-title > p:not(.section-label) {
+    max-width: 900px;
+
+    color: #c5cdd5;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+}
+
+/* ==================================================
+   NOTICIAS
+================================================== */
+
+.noticias-section {
+    background:
+        linear-gradient(
+            180deg,
+            #080b0f,
+            #0b1016
+        );
+}
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.news-card {
+    position: relative;
+
+    background: #11171d;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    transition: 0.4s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(25, 169, 255, 0.35);
+}
+
+.news-card img {
+    height: 290px;
+
+    object-fit: cover;
+
+    filter: brightness(0.78);
+
+    transition: 0.6s ease;
+}
+
+.news-card:hover img {
+    transform: scale(1.06);
+
+    filter: brightness(0.95);
+}
+
+.news-content {
+    padding: 32px;
+}
+
+.news-date {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #19a9ff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.news-content h3 {
+    margin-bottom: 18px;
+
+    font-size: 26px;
+
+    font-weight: 900;
+
+    line-height: 1.1;
+
+    text-transform: uppercase;
+}
+
+.news-content p {
+    margin-bottom: 25px;
+
+    color: #c0c9d1;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+.news-content a {
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    transition: 0.25s;
+}
+
+.news-content a:hover {
+    color: #19a9ff;
+}
+
+/* ==================================================
+   KAIJUS
+================================================== */
+
+.kaijus-section {
+    background: #070a0e;
+}
+
+.kaiju-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.kaiju-card {
+    position: relative;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    background: #11171d;
+
+    transition: 0.45s ease;
+}
+
+.kaiju-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.45);
+}
+
+.kaiju-card > img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.68);
+
+    transition: 0.7s ease;
+}
+
+.kaiju-card:hover > img {
+    transform: scale(1.08);
+
+    filter: brightness(0.9);
+}
+
+.kaiju-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(2,5,8,1),
+            rgba(2,5,8,0.8) 32%,
+            rgba(2,5,8,0.1) 75%
+        );
+
+    z-index: 1;
+}
+
+.kaiju-info {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 35px 28px;
+}
+
+.kaiju-info > span {
+    color: #19a9ff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.kaiju-info h3 {
+    margin: 12px 0;
+
+    font-size: 38px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+.kaiju-info p {
+    margin-bottom: 25px;
+
+    color: #c2cbd3;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+.kaiju-info button {
+    padding: 0;
+
+    background: none;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    transition: 0.25s;
+}
+
+.kaiju-info button:hover {
+    color: #19a9ff;
+
+    transform: translateX(6px);
+}
+
+/* ==================================================
+   DETALLE DE KAIJU
+================================================== */
+
+.kaiju-details {
+    display: none;
+
+    grid-template-columns: 45% 55%;
+
+    min-height: 100vh;
+
+    background: #0d1217;
+}
+
+.kaiju-details-image {
+    position: relative;
+
+    min-height: 750px;
+
+    overflow: hidden;
+}
+
+.kaiju-details-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 50%,
+            #0d1217 100%
+        );
+}
+
+.kaiju-details-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 750px;
+
+    object-fit: cover;
+
+    filter: brightness(0.82);
+}
+
+.kaiju-details-content {
+    position: relative;
+
+    padding: 110px 8%;
+
+    overflow-y: auto;
+}
+
+.kaiju-details-content::before {
+    content: "KAIJU DATABASE";
+
+    position: absolute;
+
+    top: 50px;
+    right: 8%;
+
+    color: #52606b;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.kaiju-details-content h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(50px, 5.5vw, 80px);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+}
+
+.kaiju-code {
+    margin-bottom: 38px;
+
+    color: #19a9ff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.kaiju-description {
+    max-width: 950px;
+
+    margin-bottom: 45px;
+
+    color: #cbd4dc;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    white-space: pre-line;
+}
+
+/* ==================================================
+   DATOS
+================================================== */
+
+.kaiju-data {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1px;
+
+    margin-bottom: 55px;
+
+    background: #303941;
+}
+
+.kaiju-data div {
+    padding: 27px;
+
+    background: #151b20;
+}
+
+.kaiju-data span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #72808c;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.kaiju-data strong {
+    color: #ffffff;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+/* ==================================================
+   HABILIDADES
+================================================== */
+
+.kaiju-details-content h3 {
+    margin-bottom: 22px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.kaiju-abilities {
+    list-style: none;
+
+    margin-bottom: 55px;
+}
+
+.kaiju-abilities li {
+    padding: 18px 0;
+
+    border-bottom: 1px solid #293138;
+
+    color: #c1cad2;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    transition: 0.25s;
+}
+
+.kaiju-abilities li:hover {
+    padding-left: 10px;
+
+    color: #ffffff;
+
+    border-color: #19a9ff;
+}
+
+.kaiju-abilities li::before {
+    content: "◆";
+
+    margin-right: 13px;
+
+    color: #19a9ff;
+
+    font-size: 7px;
+}
+
+/* ==================================================
+   HISTORIA
+================================================== */
+
+.story-title {
+    position: relative;
+
+    margin-top: 45px;
+    margin-bottom: 28px;
+
+    padding-left: 20px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.story-title::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #19a9ff;
+
+    box-shadow:
+        0 0 15px rgba(25,169,255,0.45);
+}
+
+.story-title::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 2px;
+
+    margin-top: 14px;
+
+    background: #19a9ff;
+}
+
+.kaiju-story {
+    display: block;
+
+    width: 100%;
+    max-width: none;
+
+    margin-bottom: 50px;
+
+    padding: 42px 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #151d24,
+            #10161c
+        );
+
+    border: 1px solid #28323a;
+
+    border-left: 4px solid #19a9ff;
+
+    color: #cbd4dc;
+
+    font-size: 19px;
+
+    line-height: 2.05;
+
+    white-space: normal;
+}
+
+/* ==================================================
+   BOTÓN SECUNDARIO
+================================================== */
+
+.secondary-button {
+    padding: 17px 32px;
+
+    background: transparent;
+
+    border: 1px solid #52606b;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    transition: 0.3s;
+}
+
+.secondary-button:hover {
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    color: #101418;
+}
+
+/* ==================================================
+   CAZADORES
+================================================== */
+
+.hunters {
+    position: relative;
+
+    min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,7,11,0.95),
+            rgba(3,7,11,0.55),
+            rgba(3,7,11,0.15)
+        ),
+        url("img/hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+/* ==================================================
+   JUGAR
+================================================== */
+
+.play-section {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #080b0f;
+}
+
+.play-section::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -40px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.3),
+            rgba(0,0,0,0.7)
+        ),
+        url("img/hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: brightness(0.65);
+
+    animation: playBackground 15s ease-in-out infinite;
+}
+
+.play-section::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.9)
+        );
+}
+
+.play-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+
+    max-width: 1300px;
+
+    margin-top: 70px;
+
+    text-align: center;
+}
+
+.play-content .section-label {
+    color: #19a9ff;
+
+    font-size: 13px;
+
+    letter-spacing: 6px;
+}
+
+.play-content h2 {
+    margin: 0;
+
+    font-size: clamp(65px, 9vw, 140px);
+
+    font-weight: 900;
+
+    line-height: 0.82;
+
+    letter-spacing: -7px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 15px 50px rgba(0,0,0,0.95);
+}
+
+.play-content > p:not(.section-label) {
+    max-width: 850px;
+
+    margin: 48px auto 38px;
+
+    color: #d4dce3;
+
+    font-size: 20px;
+
+    line-height: 1.9;
+}
+
+/* ==================================================
+   BOTÓN JUGAR AHORA — MÁS GRANDE
+================================================== */
+
+.play-button {
+    min-height: 78px;
+
+    min-width: 280px;
+
+    padding: 0 55px;
+
+    border: 2px solid #19a9ff;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    box-shadow:
+        0 15px 45px rgba(25, 169, 255, 0.3);
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    min-height: 130px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 40px 8%;
+
+    background: #070a0e;
+
+    border-top: 1px solid rgba(25,169,255,0.15);
+}
+
+footer p {
+    color: #697681;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+/* ==================================================
+   ANIMACIONES
+================================================== */
+
+@keyframes heroIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes playBackground {
+
+    0% {
+        transform: scale(1.04);
+    }
+
+    50% {
+        transform: scale(1.09);
+    }
+
+    100% {
+        transform: scale(1.04);
+    }
+
+}
+
+/* ==================================================
+   RESPONSIVE — 1000px
+================================================== */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .navbar nav {
+        gap: 20px;
+    }
+
+    .kaiju-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kaiju-details {
+        grid-template-columns: 1fr;
+    }
+
+    .kaiju-details-image {
+        min-height: 500px;
+    }
+
+    .kaiju-details-image img {
+        min-height: 500px;
+    }
+
+    .kaiju-details-image::after {
+        background:
+            linear-gradient(
+                to bottom,
+                transparent 50%,
+                #0d1217 100%
+            );
+    }
+
+}
+
+/* ==================================================
+   RESPONSIVE — 700px
+================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+
+        min-height: 70px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .navbar nav a {
+        font-size: 9px;
+    }
+
+    .hero {
+        padding: 170px 6% 100px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+
+        letter-spacing: -4px;
+    }
+
+    .hero-content > p:not(.section-label) {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 95px 6%;
+    }
+
+    .section-title {
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        font-size: 46px;
+
+        letter-spacing: -3px;
+    }
+
+    .section-title > p:not(.section-label) {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-content p {
+        font-size: 16px;
+    }
+
+    .kaiju-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kaiju-card {
+        min-height: 520px;
+    }
+
+    .kaiju-info p {
+        font-size: 15px;
+    }
+
+    .kaiju-details-content {
+        padding: 75px 6%;
+    }
+
+    .kaiju-details-content h2 {
+        font-size: 50px;
+    }
+
+    .kaiju-description {
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+    .kaiju-abilities li {
+        font-size: 15px;
+    }
+
+    .kaiju-story {
+        padding: 30px;
+
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+    .play-section {
+        min-height: 750px;
+
+        height: 100vh;
+    }
+
+    .play-content {
+        width: 92%;
+
+        margin-top: 50px;
+    }
+
+    .play-content .section-label {
+        font-size: 9px;
+
+        letter-spacing: 4px;
+    }
+
+    .play-content h2 {
+        font-size: 58px;
+
+        letter-spacing: -4px;
+    }
+
+    .play-content > p:not(.section-label) {
+        font-size: 16px;
+
+        margin-top: 35px;
+    }
+
+    .play-button {
+        min-width: 240px;
+
+        height: 68px;
+
+        font-size: 12px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}
+
+/* ==================================================
+   RESPONSIVE — 450px
+================================================== */
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-content > p:not(.section-label) {
+        font-size: 15px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+    }
+
+    .section-title > p:not(.section-label) {
+        font-size: 15px;
+    }
+
+    .kaiju-data {
+        grid-template-columns: 1fr;
+    }
+
+    .kaiju-details-content h2 {
+        font-size: 47px;
+    }
+
+    .kaiju-description {
+        font-size: 15px;
+    }
+
+    .story-title {
+        font-size: 15px;
+
+        letter-spacing: 2px;
+    }
+
+    .kaiju-story {
+        padding: 22px;
+
+        font-size: 14px;
+    }
+
+    .play-content h2 {
+        font-size: 47px;
+    }
+
+    .play-content > p:not(.section-label) {
+        font-size: 14px;
+    }
+
+    .play-button {
+        min-width: 220px;
+
+        height: 64px;
+
+        font-size: 11px;
+    }
+
+}

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cazadores de Kaijus</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            CAZADORES<span>DE KAIJUS</span>
+        </div>
+
+        <nav>
+            <a href="#inicio">INICIO</a>
+            <a href="#noticias">NOTICIAS</a>
+            <a href="#kaijus">KAIJUS</a>
+            <a href="#cazadores">CAZADORES</a>
+            <a href="#jugar">JUGAR</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         INICIO
+    ========================== -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <p class="section-label">
+                BIENVENIDOS A CAMPUS SATELITE
+            </p>
+
+            <h1>
+                CAZADORES<br>
+                <span>DE KAIJUS</span>
+            </h1>
+
+            <p>
+                Criaturas desconocidas han comenzado a aparecer
+                alrededor del mundo. Investiga sus registros,
+                descubre sus historias y prepárate para
+                encontrarlas.
+            </p>
+
+            <a href="#kaijus" class="main-button">
+                EXPLORAR KAIJUS →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOTICIAS
+    ========================== -->
+
+    <section id="noticias" class="section noticias-section">
+
+        <div class="section-title">
+
+            <p class="section-label">
+                INFORME DE ÚLTIMA HORA
+            </p>
+
+            <h2>NOTICIAS</h2>
+
+            <p>
+                Mantente informado sobre los últimos
+                acontecimientos relacionados con los Kaijus.
+            </p>
+
+        </div>
+
+
+        <div class="news-grid">
+
+
+            <!-- NOTICIA 1 -->
+
+            <article class="news-card">
+
+                <img src="Kaiju2.jpg" alt="Avistamiento de Kaiju">
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        01 OCT 2026
+                    </span>
+
+                    <h3>
+                        NUEVO AVISTAMIENTO EN LA COSTA
+                    </h3>
+
+                    <p>
+                        Autoridades reportaron movimientos
+                        desconocidos cerca de una zona costera.
+                        Equipos de investigación ya se encuentran
+                        analizando el área.
+                    </p>
+
+                    <a href="#">
+                        LEER MÁS →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- NOTICIA 2 -->
+
+            <article class="news-card">
+
+                <img src="HUELLA.jpg" alt="Investigación Kaiju">
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        28 SEP 2026
+                    </span>
+
+                    <h3>
+                        INVESTIGADORES DESCUBREN NUEVAS HUELLAS
+                    </h3>
+
+                    <p>
+                        Un equipo de cazadores encontró rastros
+                        pertenecientes a una criatura todavía no
+                        identificada.
+                    </p>
+
+                    <a href="#">
+                        LEER MÁS →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- NOTICIA 3 -->
+
+            <article class="news-card">
+
+                <img src="Kaiju1.jpg" alt="Alerta Kaiju">
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        24 SEP 2026
+                    </span>
+
+                    <h3>
+                        SE ELEVA EL NIVEL DE ALERTA
+                    </h3>
+
+                    <p>
+                        Las autoridades aumentaron las medidas
+                        de seguridad después de varios reportes
+                        relacionados con actividad Kaiju.
+                    </p>
+
+                    <a href="#">
+                        LEER MÁS →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KAIJUS
+    ========================== -->
+
+    <section id="kaijus" class="section kaijus-section">
+
+        <div class="section-title">
+
+            <p class="section-label">
+                ARCHIVO DE CRIATURAS
+            </p>
+
+            <h2>KAIJUS</h2>
+
+            <p>
+                Conoce algunas de las criaturas registradas
+                por los cazadores.
+            </p>
+
+        </div>
+
+
+        <div class="kaiju-grid">
+
+
+            <!-- KAIJU 1 -->
+
+            <div class="kaiju-card">
+
+                <img src="img/kaiju1.jpg" alt="Equusgora">
+
+                <div class="kaiju-info">
+
+                    <span>K-001</span>
+
+                    <h3>Equusgora</h3>
+
+                    <p>
+                        CLASIFICACIÓN: COLOSAL
+                    </p>
+
+                    <button onclick="mostrarKaiju('equusgora')">
+                        VER MÁS →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- KAIJU 2 -->
+
+            <div class="kaiju-card">
+
+                <img src="img/kaiju2.jpg" alt="Kaiju 2">
+
+                <div class="kaiju-info">
+
+                    <span>K-002</span>
+
+                    <h3>Kaiju2_</h3>
+
+                    <p>
+                        CLASIFICACIÓN: DESCONOCIDA
+                    </p>
+
+                    <button onclick="mostrarKaiju('kaiju2')">
+                        VER MÁS →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- KAIJU 3 -->
+
+            <div class="kaiju-card">
+
+                <img src="img/kaiju3.jpg" alt="Kaiju 3">
+
+                <div class="kaiju-info">
+
+                    <span>K-003</span>
+
+                    <h3>Kaiju3_</h3>
+
+                    <p>
+                        CLASIFICACIÓN: DESCONOCIDA
+                    </p>
+
+                    <button onclick="mostrarKaiju('kaiju3')">
+                        VER MÁS →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- KAIJU 4 -->
+
+            <div class="kaiju-card">
+
+                <img src="img/kaiju4.jpg" alt="Kaiju 4">
+
+                <div class="kaiju-info">
+
+                    <span>K-004</span>
+
+                    <h3>Kaiju4_</h3>
+
+                    <p>
+                        CLASIFICACIÓN: DESCONOCIDA
+                    </p>
+
+                    <button onclick="mostrarKaiju('kaiju4')">
+                        VER MÁS →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EQUUSGORA
+    ========================== -->
+
+    <section id="equusgora" class="kaiju-details">
+
+        <div class="kaiju-details-image">
+
+            <img src="img/kaiju1.jpg" alt="Equusgora">
+
+        </div>
+
+
+        <div class="kaiju-details-content">
+
+            <p class="section-label">
+                REGISTRO DE CRIATURA
+            </p>
+
+            <h2>Equusgora</h2>
+
+            <p class="kaiju-code">
+                CÓDIGO: K-001
+            </p>
+
+
+            <p class="kaiju-description">
+                Equusgora es una criatura de tamaño colosal
+                cuya aparición ha sido registrada principalmente
+                en zonas oceánicas y fosas profundas.
+
+                Su enorme tamaño le permite atravesar grandes
+                distancias y destruir estructuras con facilidad.
+            </p>
+
+
+            <div class="kaiju-data">
+
+                <div>
+                    <span>ALTURA</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>PESO</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>HÁBITAT</span>
+                    <strong>FOSAS PROFUNDAS</strong>
+                </div>
+
+                <div>
+                    <span>AMENAZA</span>
+                    <strong>EXTREMA</strong>
+                </div>
+
+            </div>
+
+
+            <h3>HABILIDADES</h3>
+
+            <ul class="kaiju-abilities">
+
+                <li>
+                    Fuerza física extremadamente elevada
+                </li>
+
+                <li>
+                    Gran resistencia a impactos
+                </li>
+
+                <li>
+                    Gran velocidad bajo el agua
+                </li>
+
+                <li>
+                    Resistencia a la presión submarina
+                </li>
+
+            </ul>
+
+
+            <h3 class="story-title">
+                HISTORIA DEL ENCUENTRO
+            </h3>
+
+
+            <p class="kaiju-story">
+
+                La tierra tembló no con el ritmo sincopado de un
+                terremoto común, sino con el galope atronador de
+                una pesadilla ancestral.
+
+                Del fondo de la fosa marina emergió Equusgora,
+                el coloso de la bruma salada.
+
+                No era una mole pesada y torpe como los titanes
+                del pasado; su anatomía desafiaba la lógica del
+                tamaño.
+
+                Se sostenía sobre cuatro extremidades colosales
+                y musculosas, idénticas a las de un caballo de
+                tiro, terminadas en cascos macizos que
+                pulverizaban el pavimento de la ciudad como si
+                fuera cristal.
+
+                Su hocico era gigantesco, un cilindro óseo y
+                bulboso provisto de fosas nasales capaces de
+                exhalar huracanes de vapor hirviente y ceniza.
+
+                Pero lo más aterrador no era su cabeza, sino su
+                tren superior.
+
+                De su torso brotaban brazos titánicos y nudosos,
+                desarrollados para la demolición pura.
+
+                Sus garras, aunque romas y no tan afiladas,
+                poseían una fuerza descomunal. Cada zarpazo era
+                un ariete de carne y hueso capaz de reducir un
+                rascacielos a escombros con un solo impacto sordo.
+
+                Las sirenas de emergencia aullaban en la costa
+                mientras las fuerzas militares intentaban
+                contenerlo.
+
+                Tanques y artillería ligera disparaban contra su
+                imponente coraza natural, pero Equusgora apenas
+                se inmutaba ante los ataques.
+
+                Con un bufido estruendoso que sacudió los
+                cristales a kilómetros a la redonda, el kaiju
+                levantó sus poderosos brazos y descargó sus
+                garras embotadas contra el puente principal,
+                partiéndolo en dos como si fuera madera podrida.
+
+                No buscaba devorar la ciudad ni incinerarla con
+                rayos de energía.
+
+                Su avance era una marcha ciega y territorial,
+                la furia implacable de la naturaleza reclamando
+                un mundo que ya no le pertenecía.
+
+                Con un último relincho metálico que resonó en el
+                cielo nublado, Equusgora se adentró en el
+                continente, dejando tras de sí un eco de cascos
+                titánicos que la humanidad jamás olvidaría.
+
+            </p>
+
+
+            <button class="secondary-button" onclick="cerrarKaiju()">
+                CERRAR REGISTRO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KAIJU 2
+    ========================== -->
+
+    <section id="kaiju2" class="kaiju-details">
+
+        <div class="kaiju-details-image">
+
+            <img src="img/kaiju2.jpg" alt="Kaiju 2">
+
+        </div>
+
+
+        <div class="kaiju-details-content">
+
+            <p class="section-label">
+                REGISTRO DE CRIATURA
+            </p>
+
+            <h2>Kaiju2_</h2>
+
+            <p class="kaiju-code">
+                CÓDIGO: K-002
+            </p>
+
+
+            <p class="kaiju-description">
+                Información sobre esta criatura pendiente
+                de registro.
+            </p>
+
+
+            <div class="kaiju-data">
+
+                <div>
+                    <span>ALTURA</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>PESO</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>HÁBITAT</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>AMENAZA</span>
+                    <strong>ALTA</strong>
+                </div>
+
+            </div>
+
+
+            <h3>HABILIDADES</h3>
+
+            <ul class="kaiju-abilities">
+
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+
+            </ul>
+
+
+            <h3 class="story-title">
+                HISTORIA DEL ENCUENTRO
+            </h3>
+
+            <p class="kaiju-story">
+                El encuentro con esta criatura aún se encuentra
+                bajo investigación.
+            </p>
+
+
+            <button class="secondary-button" onclick="cerrarKaiju()">
+                CERRAR REGISTRO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KAIJU 3
+    ========================== -->
+
+    <section id="kaiju3" class="kaiju-details">
+
+        <div class="kaiju-details-image">
+
+            <img src="img/kaiju3.jpg" alt="Kaiju 3">
+
+        </div>
+
+
+        <div class="kaiju-details-content">
+
+            <p class="section-label">
+                REGISTRO DE CRIATURA
+            </p>
+
+            <h2>Kaiju3_</h2>
+
+            <p class="kaiju-code">
+                CÓDIGO: K-003
+            </p>
+
+
+            <p class="kaiju-description">
+                Información sobre esta criatura pendiente
+                de registro.
+            </p>
+
+
+            <div class="kaiju-data">
+
+                <div>
+                    <span>ALTURA</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>PESO</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>HÁBITAT</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>AMENAZA</span>
+                    <strong>EXTREMA</strong>
+                </div>
+
+            </div>
+
+
+            <h3>HABILIDADES</h3>
+
+            <ul class="kaiju-abilities">
+
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+
+            </ul>
+
+
+            <h3 class="story-title">
+                HISTORIA DEL ENCUENTRO
+            </h3>
+
+            <p class="kaiju-story">
+                El encuentro con esta criatura aún se encuentra
+                bajo investigación.
+            </p>
+
+
+            <button class="secondary-button" onclick="cerrarKaiju()">
+                CERRAR REGISTRO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KAIJU 4
+    ========================== -->
+
+    <section id="kaiju4" class="kaiju-details">
+
+        <div class="kaiju-details-image">
+
+            <img src="img/kaiju4.jpg" alt="Kaiju 4">
+
+        </div>
+
+
+        <div class="kaiju-details-content">
+
+            <p class="section-label">
+                REGISTRO DE CRIATURA
+            </p>
+
+            <h2>Kaiju4_</h2>
+
+            <p class="kaiju-code">
+                CÓDIGO: K-004
+            </p>
+
+
+            <p class="kaiju-description">
+                Kaiju4_ es una criatura cuyo comportamiento
+                permanece prácticamente desconocido.
+            </p>
+
+
+            <div class="kaiju-data">
+
+                <div>
+                    <span>ALTURA</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>PESO</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>HÁBITAT</span>
+                    <strong>DESCONOCIDO</strong>
+                </div>
+
+                <div>
+                    <span>AMENAZA</span>
+                    <strong>DESCONOCIDA</strong>
+                </div>
+
+            </div>
+
+
+            <h3>HABILIDADES</h3>
+
+            <ul class="kaiju-abilities">
+
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+                <li>Pendiente de registro</li>
+
+            </ul>
+
+
+            <h3 class="story-title">
+                HISTORIA DEL ENCUENTRO
+            </h3>
+
+            <p class="kaiju-story">
+                El encuentro con esta criatura aún se encuentra
+                bajo investigación.
+            </p>
+
+
+            <button class="secondary-button" onclick="cerrarKaiju()">
+                CERRAR REGISTRO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAZADORES
+    ========================== -->
+
+    <section id="cazadores" class="section hunters">
+
+        <div class="section-title">
+
+            <p class="section-label">
+                UNIDAD DE INVESTIGACIÓN
+            </p>
+
+            <h2>CAZADORES</h2>
+
+            <p>
+                Personas encargadas de investigar, rastrear
+                y documentar la actividad de los Kaijus.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JUGAR
+    ========================== -->
+
+    <section id="jugar" class="play-section">
+
+        <div class="play-overlay"></div>
+
+        <div class="play-content">
+
+            <p class="section-label">
+                CAZADORES DE KAIJUS
+            </p>
+
+            <h2>
+                COMIENZA<br>
+                LA CAZA
+            </h2>
+
+            <p>
+                Prepárate para encontrar criaturas desconocidas,
+                descubrir sus rastros y convertirte en un verdadero
+                cazador de Kaijus.
+            </p>
+
+            <a href="juego.html" class="play-button">
+                JUGAR AHORA
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CAZADORES DE KAIJUS
+        </p>
+
+        <p>
+            PROYECTO UNIVERSITARIO
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
