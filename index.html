@@ -792,31 +792,84 @@
                 cazador de Kaijus.
             </p>
 
-            <a href="https://kevin7-malagon.itch.io/cazadores-de-kaijus" class="play-button">
-                JUGAR AHORA
-            </a>
+            <a href="https://kevin7-malagon.itch.io/cazadores-de-kaijus" class="play-button"> 
+                JUGAR AHORA 
+            </a> 
+ 
+        </div> 
+ 
+    </section> 
+ 
+ 
+    <!-- ========================= 
+         FOOTER 
+    ========================== --> 
+ 
+    <footer> 
+ 
+        <p> 
+            © 2026 CAZADORES DE KAIJUS 
+        </p> 
+ 
+ 
+    </footer> 
 
-        </div>
-
-    </section>
-
-
+ 
     <!-- =========================
-         FOOTER
-    ========================== -->
+     POPUP DE AVISOS KAIJU
+========================== -->
 
-    <footer>
+<div id="alerta-kaiju" class="alerta-kaiju">
+
+    <div class="alerta-kaiju-box">
+
+        <button class="cerrar-alerta" onclick="cerrarAlerta()">
+            ×
+        </button>
+
+        <span class="alerta-linea">
+            ⚠ TRANSMISIÓN DETECTADA
+        </span>
+
+        <h2>
+            ¿DETECTAMOS<br>
+            <span>ACTIVIDAD KAIJU?</span>
+        </h2>
 
         <p>
-            © 2026 CAZADORES DE KAIJUS
+            Déjanos tu correo y recibe avisos sobre nuevos
+            Kaijus, actualizaciones, eventos y próximos
+            encuentros.
         </p>
 
+        <form id="form-alerta">
 
-    </footer>
+            <input
+                type="email"
+                id="correo-alerta"
+                placeholder="Introduce tu correo"
+                required
+            >
 
+            <button type="submit">
+                RECIBIR AVISOS →
+            </button>
 
-    <script src="script.js"></script>
+        </form>
 
-</body>
+        <div id="mensaje-alerta"></div>
 
-</html> 
+        <small>
+            INFORMACIÓN CLASIFICADA · UNIDAD DE INVESTIGACIÓN
+        </small>
+
+    </div>
+
+</div>
+ 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+ 
+</body> 
+ 
+</html>  
