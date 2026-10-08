@@ -1,4 +1,4 @@
-/* ==================================================
+ /* ==================================================
    CAZADORES DE KAIJUS
 ================================================== */
 
@@ -1458,6 +1458,377 @@ footer p {
         height: 64px;
 
         font-size: 11px;
+    }
+
+
+}
+
+    /* ==================================================
+   POPUP — ALERTA KAIJU
+================================================== */
+
+.alerta-kaiju {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 5, 10, 0.78);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 5000;
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+
+}
+
+
+.alerta-kaiju.activo {
+
+    display: flex;
+
+    opacity: 1;
+
+}
+
+
+/* =========================
+   CAJA
+========================= */
+
+.alerta-kaiju-box {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    padding: 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111a22,
+            #080d12
+        );
+
+    border: 1px solid rgba(25, 169, 255, 0.35);
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.75),
+        0 0 40px rgba(25, 169, 255, 0.08);
+
+    transform: translateY(25px);
+
+    transition: transform 0.4s ease;
+
+}
+
+
+.alerta-kaiju.activo .alerta-kaiju-box {
+
+    transform: translateY(0);
+
+}
+
+
+/* Línea decorativa */
+
+.alerta-kaiju-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #19a9ff;
+
+    box-shadow:
+        0 0 20px rgba(25, 169, 255, 0.8);
+
+}
+
+
+/* =========================
+   BOTÓN CERRAR
+========================= */
+
+.cerrar-alerta {
+
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 35px;
+    height: 35px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+.cerrar-alerta:hover {
+
+    background: #19a9ff;
+
+    border-color: #19a9ff;
+
+    color: #071019;
+
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.alerta-linea {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #19a9ff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+}
+
+
+.alerta-kaiju-box h2 {
+
+    margin-bottom: 25px;
+
+    font-size: clamp(38px, 6vw, 65px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+}
+
+
+.alerta-kaiju-box h2 span {
+
+    color: #19a9ff;
+
+    text-shadow:
+        0 0 20px rgba(25,169,255,0.4);
+
+}
+
+
+.alerta-kaiju-box p {
+
+    margin-bottom: 30px;
+
+    color: #c5cdd5;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+#form-alerta {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+#correo-alerta {
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 58px;
+
+    padding: 0 18px;
+
+    background: #080d12;
+
+    border: 1px solid #303b44;
+
+    outline: none;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+
+}
+
+
+#correo-alerta::placeholder {
+
+    color: #66727d;
+
+}
+
+
+#correo-alerta:focus {
+
+    border-color: #19a9ff;
+
+    box-shadow:
+        0 0 15px rgba(25,169,255,0.12);
+
+}
+
+
+#form-alerta button {
+
+    height: 58px;
+
+    padding: 0 25px;
+
+    background: #19a9ff;
+
+    border: 1px solid #19a9ff;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+
+#form-alerta button:hover {
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    color: #071019;
+
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+#mensaje-alerta {
+
+    min-height: 22px;
+
+    margin-top: 18px;
+
+    color: #19a9ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.alerta-kaiju-box small {
+
+    display: block;
+
+    margin-top: 25px;
+
+    color: #53616d;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE POPUP
+================================================== */
+
+@media (max-width: 600px) {
+
+    .alerta-kaiju-box {
+
+        padding: 45px 25px;
+
+    }
+
+
+    .alerta-kaiju-box h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    #form-alerta {
+
+        flex-direction: column;
+
+    }
+
+
+    #form-alerta button {
+
+        width: 100%;
+
     }
 
 }
