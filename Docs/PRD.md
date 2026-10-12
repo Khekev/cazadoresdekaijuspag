@@ -9,10 +9,8 @@ Estado: En Revision
 Objetivo: Dar a conocer la Universidad Amerike por medio de una experiencia interactiva que mezcle elementos de AR y puzzles 2D.
 
 3. Publico Objetivo (User Personas)
-Informacion demografica: Edad, profesion, ubicacion, nivel de ingresos o estado civil.
-Objetivos y metas: Qué busca lograr el usuario al usar tu producto o servicio.
-Puntos de dolor (pain points): 
-Comportamiento: 
+Informacion demografica: Todos los rangos de edad, Estudiantes, docentes, padres de familia e interesados en la universidad o la experiencia, Campus Amerike Satelite.
+Objetivos y metas: Que busca lograr el usuario al usar tu producto o servicio.
 
 4. Requisitos Funcionales (Historias de Usuario)
 
@@ -28,14 +26,9 @@ ID	Historia de Usuario	Prioridad
 
 5. Requisitos No Funcionales
 
-• Rendimiento: La sincronización de la lista de favoritos entre dispositivos debe tardar menos de 2 segundos.
-• Seguridad: Solo los usuarios que hayan iniciado sesión pueden guardar favoritos de forma permanente.
+Rendimiento: El pop up de la pagina para registro de correo electronico sale a los 7 segundos de ingresar a la pagina.
+Seguridad: Solo los administradores pueden hacer uso de la base de datos de la pagina.
 
-6. UX/UI & Diseño
+6. Criterios de Aceptacion (Ejemplo para RF-01)
 
-• Interacción: El icono de corazón se llenará de color rojo cuando esté activo y quedará vacío cuando se elimine.
-• (Aquí se adjuntarían los enlaces a los prototipos de Figma).
-
-7. Criterios de Aceptación (Ejemplo para RF-01)
-
-• Dado que un usuario está en la pantalla de un producto, cuando presiona el icono de corazón, entonces el sistema lo agrega a su lista y el corazón se vuelve rojo.
+El usuario ingresa su correo electronico y este queda guardado en la base de datos de la pagina.
