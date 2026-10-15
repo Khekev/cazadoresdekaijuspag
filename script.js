@@ -133,17 +133,17 @@ window.addEventListener("load", function () {
 
 });
 
-/* ==================================================
+/* 
    POPUP — AVISOS KAIJU
-================================================== */
+ */
 
 const alertaKaiju =
     document.getElementById("alerta-kaiju");
 
 
-/* =========================
+/* 
    MOSTRAR POPUP
-========================= */
+*/
 
 window.addEventListener("load", function () {
 
@@ -160,9 +160,9 @@ window.addEventListener("load", function () {
 });
 
 
-/* =========================
+/* 
    CERRAR POPUP
-========================= */
+ */
 
 function cerrarAlerta() {
 
@@ -175,10 +175,10 @@ function cerrarAlerta() {
 }
 
 
-/* =========================
+/* 
    CERRAR AL HACER CLICK
    FUERA DE LA VENTANA
-========================= */
+ */
 
 if (alertaKaiju) {
 
@@ -195,14 +195,14 @@ if (alertaKaiju) {
 }
 
 
-/* =========================
-   FORMULARIO — SUPABASE
-========================= */
+/*
+   SUPABASE
+*/
 
 
-/* =========================
+/*
    CONEXIÓN CON SUPABASE
-========================= */
+ */
 
 const SUPABASE_URL =
     "https://ginwyhfvcxhaajgktoal.supabase.co";
@@ -218,9 +218,9 @@ const supabaseClient =
     );
 
 
-/* =========================
+/* 
    FORMULARIO
-========================= */
+ */
 
 const formularioAlerta =
     document.getElementById("form-alerta");
@@ -254,9 +254,9 @@ if (formularioAlerta) {
                 );
 
 
-            /* =========================
+            /* 
                COMPROBAR CORREO
-            ========================= */
+            */
 
             if (!correo) {
 
@@ -268,9 +268,9 @@ if (formularioAlerta) {
             }
 
 
-            /* =========================
+            /* 
                ENVIANDO
-            ========================= */
+            */
 
             boton.disabled = true;
 
@@ -278,9 +278,9 @@ if (formularioAlerta) {
                 "ENVIANDO...";
 
 
-            /* =========================
+            /* 
                GUARDAR EN SUPABASE
-            ========================= */
+             */
 
             const { data, error } =
                 await supabaseClient
@@ -292,9 +292,9 @@ if (formularioAlerta) {
                     ]);
 
 
-            /* =========================
-               ERROR
-            ========================= */
+            /*
+               ERROR ola
+         */
 
             if (error) {
 
