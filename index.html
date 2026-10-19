@@ -54,7 +54,7 @@
 
             <p>
                 Criaturas desconocidas han comenzado a aparecer
-                alrededor del campus Amerike. Investiga sus registros,
+                alrededor del mundo. Investiga sus registros,
                 descubre sus historias y prepárate para
                 encontrarlas.
             </p>
@@ -326,11 +326,12 @@
 
     <section id="equusgora" class="kaiju-details">
 
-        <div class="kaiju-details-image">
 
-            <img src="Imagenes\equusgora1.png" alt="Equusgora">
-
-        </div>
+<div class="kaiju-details-image">
+    <div id="visor-equusgora">
+        <p id="estado-modelo">CARGANDO MODELO...</p>
+    </div>
+</div>
 
 
         <div class="kaiju-details-content">
@@ -878,7 +879,19 @@ Inazuma no busca nuestra destrucción, solo nos ve como fuentes de poder y una v
  
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
+
+
+<script type="importmap">
+{
+    "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+}
+</script>
+<script type="module" src="visor3d.js"></script>
+
  
 </body> 
  
-</html>  
+</html> 

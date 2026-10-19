@@ -1830,5 +1830,66 @@ footer p {
         width: 100%;
 
     }
+    
 
+}
+
+
+
+/* VISOR 3D DE EQUUSGORA */
+
+.kaiju-details-image {
+    position: relative;
+    width: 100%;
+    height: 2400px;
+    min-height: 2400px;
+    overflow: hidden;
+    background: #080b0f;
+}
+
+#visor-equusgora {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: radial-gradient(circle, #17232d, #080b0f);
+}
+
+#visor-equusgora canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#estado-modelo {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #19a9ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    pointer-events: none;
+}
+
+.kaiju-details-image::after {
+    pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+    .kaiju-details-image {
+        height: 1800px;
+        min-height: 1800px;
+    }
+}
+
+@media (max-width: 700px) {
+    .kaiju-details-image {
+        height: 1400px;
+        min-height: 1400px;
+    }
 }
