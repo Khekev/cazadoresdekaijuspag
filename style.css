@@ -1893,3 +1893,33 @@ footer p {
         min-height: 1400px;
     }
 }
+.footer-kaijus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 5%;
+    border-top: 1px solid #12313a;
+    background: #080b0e;
+}
+
+.footer-kaijus p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #777;
+    font-family: 'Black Ops One', cursive;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.footer-kaijus img {
+    width:100px;
+    height: 100px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-kaijus img:hover {
+    transform: scale(2);
+}
