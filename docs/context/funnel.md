@@ -12,24 +12,24 @@ Se utilizarán dos canales de entrada:
 
 - La botarga promocionará el proyecto de manera presencial durante el Demo Day.
 - Se colocará o entregará material promocional con un código QR.
-- El QR dirigirá a la landing page e identificará el origen de la visita con el parámetro `Kaijus/botarga/eventos`.
+- El QR dirigirá a la landing page e identificará el origen de la visita con el parámetro `src=botarga_demoday`.
 - Enlace de seguimiento (sustituir por la URL pública definitiva de la landing):
-  `https://khekev.github.io/cazadoresdekaijuspag/`
+  `https://TU-DOMINIO-DE-LA-LANDING/?src=botarga_demoday`
 
 ### Canal digital: Instagram
 
-- Se creará una cuenta oficial de Instagram para Cazadores de Kaijus y amerike.
+- Se creará una cuenta oficial de Instagram para Cazadores de Kaijus 2026.
 - Se publicarán imágenes, avances, registros de criaturas, reels y contenido relacionado con el proyecto.
-- La biografía y las publicaciones invitarán a visitar la landing page y el juego.
-- El enlace de Instagram identificará el origen con el parámetro `Instagram/amerike/cazadoresdekaijus`.
+- La biografía y las publicaciones invitarán a visitar la landing page.
+- El enlace de Instagram identificará el origen con el parámetro `src=instagram`.
 - Enlace de seguimiento (sustituir por la URL pública definitiva de la landing):
-  `https://www.instagram.com/amerikemexico/`
+  `https://TU-DOMINIO-DE-LA-LANDING/?src=instagram`
 
 ## 2. MOFU — Aterrizaje y showcase
 
 La landing page presenta el universo de Cazadores de Kaijus 2026 y permite al visitante:
 
-- Conocer el concepto de la univeresidad.
+- Conocer el concepto del proyecto.
 - Consultar noticias y novedades.
 - Explorar el archivo de criaturas K-001, K-002, K-003 y K-004.
 - Consultar fichas e información de los Kaijus.
@@ -52,7 +52,7 @@ Los nombres, sinopsis y enlaces de los dos proyectos aliados se agregarán cuand
 Se habilitará un cuestionario para los asistentes del Demo Day. El formulario medirá:
 
 - Claridad de la propuesta del proyecto.
-- Facilidad de navegación, usabilidad de la landing y el juego
+- Facilidad de navegación y usabilidad de la landing.
 - Interés por explorar los Kaijus.
 - Opiniones y sugerencias abiertas.
 - Recomendación del proyecto mediante NPS o una escala equivalente.
@@ -64,16 +64,16 @@ El enlace al cuestionario se incorporará en la landing page y estará disponibl
 1. Descubre el proyecto mediante la botarga o Instagram.
 2. Escanea el QR o pulsa el enlace de la cuenta.
 3. Llega a la landing page con la etiqueta de procedencia.
-4. Explora noticias, fichas, modelos de Kaijus y juega.
+4. Explora noticias, fichas y modelos de Kaijus.
 5. Visita los dos proyectos aliados.
 6. Responde el cuestionario de evaluación.
 
 ## Seguimiento de procedencia
 
 | Canal | Parámetro | Qué identifica |
-
-| Botarga física | `Botarga/botarga/eventos` | Visitas provenientes del QR del material físico |
-| Instagram | `Instagram/amerike/cazadoresdekaijus` | Visitas provenientes del enlace de Instagram |
+|---|---|---|
+| Botarga física | `?src=botarga_demoday` | Visitas provenientes del QR del material físico |
+| Instagram | `?src=instagram` | Visitas provenientes del enlace de Instagram |
 
 Los parámetros permiten distinguir el canal de origen. Para obtener cifras reales de visitas y clics será necesario implementar o conectar una herramienta de analítica en una etapa posterior.
 
