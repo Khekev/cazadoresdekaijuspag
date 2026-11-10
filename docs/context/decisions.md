@@ -2,17 +2,17 @@
 
 ## Propósito
 
-Registrar las decisiones de diseño, contenido y organización relacionadas con el Funnel Demo Day, la landing page y la documentación 
+Registrar las decisiones de diseño, contenido y organización relacionadas con el Funnel Demo Day, la landing page y la documentación técnica del Parcial 3.
 
 ## Decisiones vigentes
 
-### 1 — Proyecto principal
+### D-001 — Proyecto principal
 
-**Decisión:** utilizar Cazadores de Kaijus 2026 como proyecto principal .
+**Decisión:** utilizar Cazadores de Kaijus 2026 como proyecto principal del Parcial 3.
 
 **Motivo:** la landing page existente es el punto central al que se dirigirán los visitantes desde los canales de promoción.
 
-### 2 — Canales de atracción
+### D-002 — Canales de atracción
 
 **Decisión:** utilizar dos canales: uno físico y uno digital.
 
@@ -21,34 +21,34 @@ Registrar las decisiones de diseño, contenido y organización relacionadas con 
 
 **Motivo:** cumplir con el requisito de un canal presencial y uno digital, y comparar su capacidad de atraer visitas.
 
-### 3 — Etiquetado de procedencia
+### D-003 — Etiquetado de procedencia
 
 **Decisión:** identificar el origen de las visitas mediante el parámetro `src`.
 
-- Botarga: `botarga_demoday`
-- Instagram: `instagram`
+- Botarga: `?src=botarga_demoday`
+- Instagram: `?src=instagram`
 
 **Motivo:** distinguir el rendimiento de cada canal en la medición del funnel.
 
-### 4 — Conservar la landing existente
+### D-004 — Conservar la landing existente
 
-**Decisión:** continuar el desarrollo sobre los archivos actuales de HTML, CSS y JavaScript.
+**Decisión:** continuar el desarrollo sobre los archivos actuales de HTML, CSS y JavaScript, evitando rehacer la página sin necesidad.
 
 **Motivo:** ya existe una estructura con navegación, noticias, archivo de criaturas, fichas de Kaijus, sección de juego y recursos multimedia.
 
-### 5 — Experiencia principal
+### D-005 — Experiencia principal
 
 **Decisión:** utilizar la exploración del archivo de Kaijus como acción principal de la landing y mantener el enlace “JUGAR AHORA” como acceso a la experiencia publicada en itch.io.
 
 **Motivo:** permitir que el visitante conozca primero el concepto y las criaturas, y después acceda a la experiencia.
 
-### 6 — Proyectos aliados
+### D-006 — Proyectos aliados
 
 **Decisión:** conservar los dos enlaces gráficos que actualmente aparecen en el footer: RRR y Yolcatl.
 
-**Motivo:** aprovechar la sección de cross-promotion ya existente
+**Motivo:** aprovechar la sección de cross-promotion ya existente. Se deben confirmar las sinopsis y los enlaces con los responsables antes de la entrega final.
 
-### 7 — Documentación del proyecto
+### D-007 — Documentación del proyecto
 
 **Decisión:** mantener la documentación del Parcial 3 dentro de `docs/context/` con cuatro archivos: `funnel.md`, `marketing-assets.md`, `metrics.md` y `decisions.md`.
 
@@ -59,6 +59,8 @@ Registrar las decisiones de diseño, contenido y organización relacionadas con 
 - [ ] Definir el diseño final y la producción de la botarga.
 - [ ] Crear la cuenta de Instagram y publicar contenido inicial.
 - [ ] Definir la URL pública definitiva que utilizarán el QR y la biografía de Instagram.
+- [ ] Confirmar las sinopsis de RRR y Yolcatl.
+- [ ] Probar los enlaces de los proyectos aliados.
 - [ ] Crear y probar el cuestionario de feedback.
 - [ ] Revisar la landing en dispositivos móviles.
 - [ ] Definir la herramienta de analítica y la implementación de eventos para el Parcial 4.
@@ -66,4 +68,5 @@ Registrar las decisiones de diseño, contenido y organización relacionadas con 
 ## Historial
 
 | Versión | Cambio |
+|---|---|
 | 1.0 | Registro inicial de decisiones para el Parcial 3 |

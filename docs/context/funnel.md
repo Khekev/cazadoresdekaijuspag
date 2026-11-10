@@ -71,6 +71,7 @@ El enlace al cuestionario se incorporará en la landing page y estará disponibl
 ## Seguimiento de procedencia
 
 | Canal | Parámetro | Qué identifica |
+
 | Botarga física | `Botarga/botarga/eventos` | Visitas provenientes del QR del material físico |
 | Instagram | `Instagram/amerike/cazadoresdekaijus` | Visitas provenientes del enlace de Instagram |
 
