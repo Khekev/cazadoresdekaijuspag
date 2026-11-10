@@ -7,14 +7,16 @@ Definir los datos que se desea registrar durante el Demo Day y desde la landing 
 ## Métricas de atracción
 
 | Métrica | Definición | Segmentación |
+
 | Visitas a la landing | Número de sesiones o visitas recibidas | Total |
-| Visitas desde botarga | Visitas identificadas con `botarga/eventos` | Canal físico |
-| Visitas desde Instagram | Visitas identificadas con `amerike/cazadores de kaijus` | Canal digital |
+| Visitas desde botarga | Visitas identificadas con `src=botarga_demoday` | Canal físico |
+| Visitas desde Instagram | Visitas identificadas con `src=instagram` | Canal digital |
 | Distribución por canal | Porcentaje de visitas que aporta cada canal | Botarga / Instagram |
 
 ## Métricas de interacción
 
 | Métrica | Definición |
+
 | Clics en CTA principal | Veces que se pulsa “EXPLORAR KAIJUS” |
 | Aperturas de registros | Veces que se abre la información de cada Kaiju |
 | Interacciones con visor 3D | Veces que se utiliza o visualiza el visor 3D |
@@ -23,6 +25,7 @@ Definir los datos que se desea registrar durante el Demo Day y desde la landing 
 ## Métricas de sinergia
 
 | Métrica | Definición |
+
 | Clics hacia proyecto RRR | Clics en el enlace gráfico del proyecto RRR |
 | Clics hacia proyecto Yolcatl | Clics en el enlace gráfico del proyecto Yolcatl |
 | Total de clics salientes | Suma de clics hacia ambos proyectos aliados |
@@ -45,7 +48,7 @@ Definir los datos que se desea registrar durante el Demo Day y desde la landing 
 - Evitar contar recargas como visitantes únicos si la herramienta de analítica permite distinguir sesiones.
 - No almacenar datos personales innecesarios.
 - Presentar resultados agregados para el análisis del Demo Day.
-
+- Definir en el Parcial 4 el mecanismo técnico de captura, almacenamiento y consulta.
 
 ## Estado actual y alcance
 
