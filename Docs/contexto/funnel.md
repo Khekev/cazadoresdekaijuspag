@@ -43,7 +43,7 @@ Las acciones principales serán:
 
 - Invitar al visitante a explorar los registros de Kaijus mediante el CTA principal de la landing.
 - Incorporar una sección visible de cross-promotion con dos proyectos de compañeros.
-- Cada proyecto aliado tendrá una breve sinopsis y un enlace directo a su página o demo.
+- Cada proyecto aliado un enlace directo a su página o demo.
 
 Los nombres, sinopsis y enlaces de los dos proyectos aliados se agregarán cuando sean confirmados.
 
