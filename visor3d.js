@@ -122,8 +122,11 @@ function crearVisor({ contenedorId, estadoId, modeloUrl, nombre }) {
 
         controles.target.set(0, 0, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
         controles.minDistance = Math.max(radio * 0.5, 0.1);
 =======
+=======
+>>>>>>> parent of 43a0017 (Centrar verticalmente los modelos 3D en sus visores)
         controles.minDistance = Math.max(maximo * 0.2, 0.1);
 >>>>>>> parent of 43a0017 (Centrar verticalmente los modelos 3D en sus visores)
         controles.maxDistance = distancia * 5;
