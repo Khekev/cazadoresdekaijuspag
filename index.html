@@ -878,6 +878,20 @@ Inazuma no busca nuestra destrucción, solo nos ve como fuentes de poder y una v
 
 </div>
  
+
+<!-- BOTON FLOTANTE Y POPUP QR: SOLO IMAGENES -->
+<button id="boton-qr-kaijus" class="boton-qr-kaijus" type="button" aria-label="Abrir código QR" aria-controls="popup-qr-kaijus" aria-expanded="false">
+    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/qr-code.svg" alt="">
+</button>
+<div id="popup-qr-kaijus" class="popup-qr-kaijus" aria-hidden="true">
+    <div class="popup-qr-kaijus-contenido" role="dialog" aria-modal="true" aria-label="Código QR">
+        <button id="cerrar-qr-kaijus" class="cerrar-qr-kaijus" type="button" aria-label="Cerrar">
+            <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/x.svg" alt="">
+        </button>
+        <img class="imagen-qr-kaijus" src="https://api.qrserver.com/v1/create-qr-code/?size=420x420&format=png&data=https%3A%2F%2Fkhekev.github.io%2Fcazadoresdekaijuspag%2F" alt="Código QR para abrir Cazadores de Kaijus">
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 
