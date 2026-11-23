@@ -333,35 +333,12 @@ if (formularioAlerta) {
             }
 
 
-            /*
-               ENVIAR CORREOS AUTOMÁTICOS
-               La suscripción ya quedó guardada. Si falla el envío,
-               no se elimina ni se repite el registro.
-            */
-            let correosEnviados = false;
-
-            try {
-                const { error: emailError } = await supabaseClient.functions.invoke(
-                    "notify-subscriber",
-                    { body: { email: correo } }
-                );
-
-                if (emailError) {
-                    console.error("Error al enviar los correos:", emailError);
-                } else {
-                    correosEnviados = true;
-                }
-            } catch (emailException) {
-                console.error("No se pudo contactar la función de correo:", emailException);
-            }
-
             /* =========================
                REGISTRO CORRECTO
             ========================= */
 
-            mensaje.textContent = correosEnviados
-                ? "TRANSMISIÓN RECIBIDA. REVISA TU CORREO; TE ENVIAMOS LA CONFIRMACIÓN."
-                : "TRANSMISIÓN RECIBIDA. TU REGISTRO FUE GUARDADO.";
+            mensaje.textContent =
+                "TRANSMISIÓN RECIBIDA. TE MANTENDREMOS INFORMADO.";
 
 
             document
