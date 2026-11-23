@@ -260,9 +260,14 @@ if (contenedor) {
             console.log("Gekko cargado correctamente.", dimensionesModelo);
         },
         (progreso) => {
-            if (estado && progreso.total > 0) {
-                estado.textContent = "CARGANDO MODELO... " +
-                    Math.round((progreso.loaded / progreso.total) * 100) + "%";
+            if (estado) {
+                if (progreso.total > 0) {
+                    const porcentaje = Math.round((progreso.loaded / progreso.total) * 100);
+                    estado.textContent = "CARGANDO MODELO... " + porcentaje + "%";
+                } else {
+                    const megabytes = (progreso.loaded / (1024 * 1024)).toFixed(1);
+                    estado.textContent = "DESCARGANDO MODELO... " + megabytes + " MB";
+                }
             }
         },
         (error) => {
