@@ -363,3 +363,42 @@ if (formularioAlerta) {
 
 }
 
+
+
+/* POPUP QR — CAZADORES DE KAIJUS */
+(function () {
+    const botonAbrir = document.getElementById("boton-qr-kaijus");
+    const popup = document.getElementById("popup-qr-kaijus");
+    const botonCerrar = document.getElementById("cerrar-qr-kaijus");
+
+    if (!botonAbrir || !popup || !botonCerrar) return;
+
+    function abrirQR() {
+        popup.classList.add("activo");
+        popup.setAttribute("aria-hidden", "false");
+        botonAbrir.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+        botonCerrar.focus();
+    }
+
+    function cerrarQR() {
+        popup.classList.remove("activo");
+        popup.setAttribute("aria-hidden", "true");
+        botonAbrir.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        botonAbrir.focus();
+    }
+
+    botonAbrir.addEventListener("click", abrirQR);
+    botonCerrar.addEventListener("click", cerrarQR);
+
+    popup.addEventListener("click", function (event) {
+        if (event.target === popup) cerrarQR();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && popup.classList.contains("activo")) {
+            cerrarQR();
+        }
+    });
+})();
