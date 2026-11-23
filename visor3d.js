@@ -103,13 +103,17 @@ function crearVisor({ contenedorId, estadoId, modeloUrl, nombre }) {
         ) * 1.3;
 
         const maximo = Math.max(alto, ancho, profundidad);
-        camara.position.set(0, 0, distancia);
-        camara.lookAt(0, 0, 0);
+
+        // Eleva ligeramente el punto de mira para que el modelo
+        // quede visualmente centrado en el visor, especialmente en celular.
+        const alturaMira = alto * 0.10;
+        camara.position.set(0, alturaMira, distancia);
+        camara.lookAt(0, alturaMira, 0);
         camara.near = Math.max(maximo / 10000, 0.001);
         camara.far = Math.max(distancia * 100, 1000);
         camara.updateProjectionMatrix();
 
-        controles.target.set(0, 0, 0);
+        controles.target.set(0, alturaMira, 0);
         controles.minDistance = Math.max(maximo * 0.2, 0.1);
         controles.maxDistance = distancia * 5;
         controles.update();
