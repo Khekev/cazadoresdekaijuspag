@@ -118,9 +118,6 @@ function crearVisor({ contenedorId, estadoId, modeloUrl, nombre }) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of ee95fe6 (Update visor3d.js)
 =======
 >>>>>>> parent of ee95fe6 (Update visor3d.js)
         controles.minDistance = Math.max(radio * 0.5, 0.1);
