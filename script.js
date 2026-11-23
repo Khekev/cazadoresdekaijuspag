@@ -32,6 +32,10 @@ function mostrarKaiju(id) {
         // Mostrar el registro
         fichaSeleccionada.style.display = "grid";
 
+        // Cargar el visor 3D solo cuando se abre esta ficha.
+        window.dispatchEvent(new CustomEvent("kaiju:open", {
+            detail: { id: id }
+        }));
 
         // Desplazarse hasta el registro
         fichaSeleccionada.scrollIntoView({
