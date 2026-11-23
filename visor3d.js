@@ -246,7 +246,7 @@ if (contenedor) {
         // Ajusta la distancia usando una esfera envolvente para que
         // ninguna parte del Kaiju quede cortada, incluso si es muy ancho.
         const medioFov = Math.min(medioFovVertical, medioFovHorizontal);
-        const distancia = (radio / Math.sin(medioFov)) * 2.25;
+        const distancia = (radio / Math.sin(medioFov)) * 1.25;
 
         camara.position.set(0, 0, distancia);
         camara.lookAt(0, 0, 0);
