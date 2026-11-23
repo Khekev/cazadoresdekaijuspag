@@ -1998,6 +1998,7 @@ footer p {
     width: min(100%, 480px);
     min-height: 300px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 55px 35px 35px;
@@ -2005,6 +2006,25 @@ footer p {
     background: linear-gradient(145deg,#14232e,#080d12);
     box-shadow: 0 25px 90px rgba(0,0,0,.75), 0 0 35px rgba(25,169,255,.15);
     animation: aparecerQR .25s ease;
+}
+.texto-qr-kaijus {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+.texto-qr-kaijus h2 {
+    margin: 0 0 9px;
+    color: #19a9ff;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: clamp(19px, 4vw, 25px);
+    letter-spacing: 1px;
+}
+.texto-qr-kaijus p {
+    margin: 0;
+    color: rgba(255,255,255,.82);
+    font-size: 13px;
+    line-height: 1.5;
 }
 .imagen-qr-kaijus {
     display: block;
