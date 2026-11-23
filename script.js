@@ -363,37 +363,3 @@ if (formularioAlerta) {
 
 }
 
-
-
-/* APERTURA Y CIERRE DEL POPUP QR */
-(function () {
-    const boton = document.getElementById("boton-qr-kaijus");
-    const popup = document.getElementById("popup-qr-kaijus");
-    const cerrar = document.getElementById("cerrar-qr-kaijus");
-    if (!boton || !popup || !cerrar) return;
-
-    function abrirPopupQr() {
-        popup.classList.add("activo");
-        popup.setAttribute("aria-hidden", "false");
-        boton.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-        cerrar.focus();
-    }
-
-    function cerrarPopupQr() {
-        popup.classList.remove("activo");
-        popup.setAttribute("aria-hidden", "true");
-        boton.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-        boton.focus();
-    }
-
-    boton.addEventListener("click", abrirPopupQr);
-    cerrar.addEventListener("click", cerrarPopupQr);
-    popup.addEventListener("click", function (event) {
-        if (event.target === popup) cerrarPopupQr();
-    });
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && popup.classList.contains("activo")) cerrarPopupQr();
-    });
-})();
