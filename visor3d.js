@@ -19,10 +19,15 @@ const visores = {
 };
 
 const visoresInicializados = new Set();
+const reactivarVisores = new Map();
 
 function iniciarVisor(id) {
     const config = visores[id];
-    if (!config || visoresInicializados.has(id)) return;
+    if (!config) return;
+    if (visoresInicializados.has(id)) {
+        reactivarVisores.get(id)?.();
+        return;
+    }
 
     const contenedor = document.getElementById(config.contenedor);
     if (!contenedor) return;
@@ -136,6 +141,8 @@ function iniciarVisor(id) {
             animacionId = requestAnimationFrame(animar);
         }
     }
+
+    reactivarVisores.set(id, actualizarAnimacion);
 
     const observador = new ResizeObserver(() => {
         ajustarTamano();
