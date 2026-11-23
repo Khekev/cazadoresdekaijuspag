@@ -1923,3 +1923,31 @@ footer p {
 .footer-kaijus img:hover {
     transform: scale(2);
 }
+
+/* VISOR 3D DEL SEGUNDO KAIJU: GEKKO */
+#visor-gekkofinal {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: radial-gradient(circle, #17232d, #080b0f);
+}
+#visor-gekkofinal canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#estado-gekkofinal {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #19a9ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    pointer-events: none;
+}
