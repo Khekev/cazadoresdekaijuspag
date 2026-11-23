@@ -175,3 +175,95 @@ if (contenedor) {
 
     animar();
 }
+
+// VISOR 3D DEL SEGUNDO KAIJU: GEKKO
+(function () {
+    const contenedor = document.getElementById("visor-gekkofinal");
+    if (!contenedor) return;
+
+    const escena = new THREE.Scene();
+    escena.background = new THREE.Color("#0d1217");
+    const camara = new THREE.PerspectiveCamera(35, 1, 0.01, 100000);
+    const renderizador = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderizador.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderizador.outputColorSpace = THREE.SRGBColorSpace;
+    renderizador.domElement.style.width = "100%";
+    renderizador.domElement.style.height = "100%";
+    contenedor.appendChild(renderizador.domElement);
+
+    escena.add(new THREE.HemisphereLight(0xffffff, 0x263344, 2.5));
+    const luzPrincipal = new THREE.DirectionalLight(0xffffff, 3);
+    luzPrincipal.position.set(4, 8, 6);
+    escena.add(luzPrincipal);
+    const luzFrontal = new THREE.DirectionalLight(0xffffff, 1.5);
+    luzFrontal.position.set(-4, 3, 5);
+    escena.add(luzFrontal);
+
+    const controles = new OrbitControls(camara, renderizador.domElement);
+    controles.enableDamping = true;
+    controles.dampingFactor = 0.06;
+    controles.enablePan = false;
+
+    const estado = document.getElementById("estado-gekkofinal");
+    const cargador = new GLTFLoader();
+    cargador.load("./MODELOS/gekkofinal.2.glb", (glb) => {
+        const modelo = glb.scene;
+        escena.add(modelo);
+        const caja = new THREE.Box3().setFromObject(modelo);
+        const centro = caja.getCenter(new THREE.Vector3());
+        const tamano = caja.getSize(new THREE.Vector3());
+        const maximo = Math.max(tamano.x, tamano.y, tamano.z);
+        modelo.position.sub(centro);
+
+        const anguloVertical = THREE.MathUtils.degToRad(camara.fov / 2);
+        const aspecto = Math.max(contenedor.clientWidth / Math.max(contenedor.clientHeight, 1), 0.1);
+        const anguloHorizontal = Math.atan(Math.tan(anguloVertical) * aspecto);
+        const distancia = Math.max(
+            (tamano.y / 2) / Math.tan(anguloVertical),
+            (tamano.x / 2) / Math.tan(anguloHorizontal),
+            tamano.z / 2
+        ) * 1.25;
+
+        controles.target.set(0, 0, 0);
+        camara.position.set(0, 0, distancia);
+        camara.lookAt(0, 0, 0);
+        camara.near = Math.max(maximo / 10000, 0.001);
+        camara.far = Math.max(maximo * 100, 1000);
+        camara.updateProjectionMatrix();
+        controles.minDistance = Math.max(maximo * 0.3, 0.1);
+        controles.maxDistance = distancia * 5;
+        controles.update();
+        if (estado) estado.style.display = "none";
+        ajustarTamano();
+        console.log("Gekko cargado y centrado.", tamano);
+    }, (progreso) => {
+        if (estado && progreso.total > 0) {
+            estado.textContent = "CARGANDO MODELO... " +
+                Math.round((progreso.loaded / progreso.total) * 100) + "%";
+        }
+    }, (error) => {
+        console.error("Error al cargar Gekko:", error);
+        if (estado) estado.textContent = "ERROR AL CARGAR EL MODELO. REVISA LA CONSOLA.";
+    });
+
+    function ajustarTamano() {
+        const ancho = contenedor.clientWidth;
+        const alto = contenedor.clientHeight;
+        if (ancho <= 0 || alto <= 0) return;
+        renderizador.setSize(ancho, alto);
+        camara.aspect = ancho / alto;
+        camara.updateProjectionMatrix();
+    }
+
+    const observador = new ResizeObserver(ajustarTamano);
+    observador.observe(contenedor);
+    window.addEventListener("resize", ajustarTamano);
+    ajustarTamano();
+
+    function animar() {
+        requestAnimationFrame(animar);
+        controles.update();
+        renderizador.render(escena, camara);
+    }
+    animar();
+})();
