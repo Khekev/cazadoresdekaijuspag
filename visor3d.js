@@ -84,37 +84,37 @@ function crearVisor({ contenedorId, estadoId, modeloUrl, nombre }) {
     }
 
     function encuadrarModelo(objeto) {
-        // Calcula el centro y el volumen completo del modelo.
         const caja = new THREE.Box3().setFromObject(objeto);
         const centro = caja.getCenter(new THREE.Vector3());
-        const esfera = caja.getBoundingSphere(new THREE.Sphere());
-
-        // Centra realmente la geometría en el visor.
+        const dimensiones = caja.getSize(new THREE.Vector3());
         objeto.position.sub(centro);
 
-        const radio = Math.max(esfera.radius, 0.01);
-        const medioFovVertical = THREE.MathUtils.degToRad(camara.fov / 2);
-        const aspecto = Math.max(
-            contenedor.clientWidth / Math.max(contenedor.clientHeight, 1),
-            0.1
-        );
-        const medioFovHorizontal = Math.atan(
-            Math.tan(medioFovVertical) * aspecto
-        );
+        const alto = Math.max(dimensiones.y, 0.01);
+        const ancho = Math.max(dimensiones.x, 0.01);
+        const profundidad = Math.max(dimensiones.z, 0.01);
+        const anguloVertical = THREE.MathUtils.degToRad(camara.fov / 2);
+        const aspecto = Math.max(contenedor.clientWidth / Math.max(contenedor.clientHeight, 1), 0.1);
+        const anguloHorizontal = Math.atan(Math.tan(anguloVertical) * aspecto);
 
-        // Ajusta la distancia usando una esfera envolvente para que
-        // ninguna parte del Kaiju quede cortada, incluso si es muy ancho.
-        const medioFov = Math.min(medioFovVertical, medioFovHorizontal);
-        const distancia = (radio / Math.sin(medioFov)) * 1.25;
+        const distancia = Math.max(
+            (alto / 2) / Math.tan(anguloVertical),
+            (ancho / 2) / Math.tan(anguloHorizontal),
+            profundidad / 2
+        ) * 1.3;
 
-        camara.position.set(0, 0, distancia);
-        camara.lookAt(0, 0, 0);
-        camara.near = Math.max(distancia / 1000, 0.001);
+        const maximo = Math.max(alto, ancho, profundidad);
+
+        // Eleva ligeramente el punto de mira para que el modelo
+        // quede visualmente centrado en el visor, especialmente en celular.
+        const alturaMira = alto * 0.10;
+        camara.position.set(0, alturaMira, distancia);
+        camara.lookAt(0, alturaMira, 0);
+        camara.near = Math.max(maximo / 10000, 0.001);
         camara.far = Math.max(distancia * 100, 1000);
         camara.updateProjectionMatrix();
 
-        controles.target.set(0, 0, 0);
-        controles.minDistance = Math.max(radio * 0.5, 0.1);
+        controles.target.set(0, alturaMira, 0);
+        controles.minDistance = Math.max(maximo * 0.2, 0.1);
         controles.maxDistance = distancia * 5;
         controles.update();
     }
