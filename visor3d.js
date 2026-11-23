@@ -107,14 +107,20 @@ function crearVisor({ contenedorId, estadoId, modeloUrl, nombre }) {
         const medioFov = Math.min(medioFovVertical, medioFovHorizontal);
         const distancia = (radio / Math.sin(medioFov)) * 1.25;
 
+<<<<<<< HEAD
         camara.position.set(0, 0, distancia);
         camara.lookAt(0, 0, 0);
         camara.near = Math.max(distancia / 1000, 0.001);
+=======
+        const maximo = Math.max(alto, ancho, profundidad);
+        camara.position.set(0, 0, distancia);
+        camara.lookAt(0, 0, 0);
+        camara.near = Math.max(maximo / 10000, 0.001);
+>>>>>>> parent of 43a0017 (Centrar verticalmente los modelos 3D en sus visores)
         camara.far = Math.max(distancia * 100, 1000);
         camara.updateProjectionMatrix();
 
         controles.target.set(0, 0, 0);
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         controles.minDistance = Math.max(radio * 0.5, 0.1);
@@ -123,9 +129,6 @@ function crearVisor({ contenedorId, estadoId, modeloUrl, nombre }) {
 >>>>>>> parent of 43a0017 (Centrar verticalmente los modelos 3D en sus visores)
         controles.minDistance = Math.max(maximo * 0.2, 0.1);
 >>>>>>> parent of 43a0017 (Centrar verticalmente los modelos 3D en sus visores)
-=======
-        controles.minDistance = Math.max(radio * 0.5, 0.1);
->>>>>>> parent of 0db7922 (Update visor3d.js)
         controles.maxDistance = distancia * 5;
         controles.update();
     }
