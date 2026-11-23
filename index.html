@@ -905,44 +905,18 @@ Inazuma no busca nuestra destrucción, solo nos ve como fuentes de poder y una v
             <button id="cerrar-qr-kaijus" class="cerrar-qr-kaijus" type="button" aria-label="Cerrar">
                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/x.svg" alt="">
             </button>
+            <div class="texto-qr-kaijus">
+                <span>ACCESO AL ARCHIVO</span>
+                <h2>ESCANEA EL CÓDIGO</h2>
+                <p>Abre Cazadores de Kaijus desde tu celular.</p>
+            </div>
             <img class="imagen-qr-kaijus"
                 src="https://api.qrserver.com/v1/create-qr-code/?size=420x420&format=png&data=https%3A%2F%2Fkhekev.github.io%2Fcazadoresdekaijuspag%2F"
                 alt="Código QR para abrir Cazadores de Kaijus">
         </div>
     </div>
 
-    <!-- CONTROL DEL POPUP QR -->
-    <script>
-    (function () {
-        const boton = document.getElementById("boton-qr-kaijus");
-        const popup = document.getElementById("popup-qr-kaijus");
-        const cerrar = document.getElementById("cerrar-qr-kaijus");
 
-        if (!boton || !popup || !cerrar) return;
-
-        boton.addEventListener("click", function () {
-            popup.classList.add("activo");
-            popup.setAttribute("aria-hidden", "false");
-            boton.setAttribute("aria-expanded", "true");
-            document.body.style.overflow = "hidden";
-        });
-
-        function cerrarPopup() {
-            popup.classList.remove("activo");
-            popup.setAttribute("aria-hidden", "true");
-            boton.setAttribute("aria-expanded", "false");
-            document.body.style.overflow = "";
-        }
-
-        cerrar.addEventListener("click", cerrarPopup);
-        popup.addEventListener("click", function (event) {
-            if (event.target === popup) cerrarPopup();
-        });
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape" && popup.classList.contains("activo")) cerrarPopup();
-        });
-    })();
-    </script>
 
 </body> 
  
