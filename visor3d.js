@@ -183,10 +183,12 @@ if (contenedor) {
 
     const escena = new THREE.Scene();
     escena.background = new THREE.Color("#0d1217");
+
     const camara = new THREE.PerspectiveCamera(35, 1, 0.01, 100000);
     const renderizador = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderizador.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderizador.outputColorSpace = THREE.SRGBColorSpace;
+    renderizador.domElement.style.display = "block";
     renderizador.domElement.style.width = "100%";
     renderizador.domElement.style.height = "100%";
     contenedor.appendChild(renderizador.domElement);
@@ -200,59 +202,84 @@ if (contenedor) {
     escena.add(luzFrontal);
 
     const controles = new OrbitControls(camara, renderizador.domElement);
+    controles.enableRotate = true;
+    controles.enableZoom = true;
+    controles.enablePan = false;
     controles.enableDamping = true;
     controles.dampingFactor = 0.06;
-    controles.enablePan = false;
 
     const estado = document.getElementById("estado-gekkofinal");
-    const cargador = new GLTFLoader();
-    cargador.load("./MODELOS/gekkofinal.2.glb", (glb) => {
-        const modelo = glb.scene;
-        escena.add(modelo);
-        const caja = new THREE.Box3().setFromObject(modelo);
-        const centro = caja.getCenter(new THREE.Vector3());
-        const tamano = caja.getSize(new THREE.Vector3());
-        const maximo = Math.max(tamano.x, tamano.y, tamano.z);
-        modelo.position.sub(centro);
+    let dimensionesModelo = null;
+    const objetivo = new THREE.Vector3(0, 0, 0);
+
+    function encuadrarModelo() {
+        if (!dimensionesModelo) return;
+
+        const ancho = contenedor.clientWidth;
+        const alto = contenedor.clientHeight;
+        if (ancho <= 0 || alto <= 0) return;
+
+        const aspecto = ancho / alto;
+        camara.aspect = aspecto;
+        camara.updateProjectionMatrix();
 
         const anguloVertical = THREE.MathUtils.degToRad(camara.fov / 2);
-        const aspecto = Math.max(contenedor.clientWidth / Math.max(contenedor.clientHeight, 1), 0.1);
         const anguloHorizontal = Math.atan(Math.tan(anguloVertical) * aspecto);
-        const distancia = Math.max(
-            (tamano.y / 2) / Math.tan(anguloVertical),
-            (tamano.x / 2) / Math.tan(anguloHorizontal),
-            tamano.z / 2
-        ) * 1.25;
 
-        controles.target.set(0, 0, 0);
+        const distanciaAlto = (dimensionesModelo.y / 2) / Math.tan(anguloVertical);
+        const distanciaAncho = (dimensionesModelo.x / 2) / Math.tan(anguloHorizontal);
+        const distanciaProfundidad = dimensionesModelo.z / 2;
+        const distancia = Math.max(distanciaAlto, distanciaAncho, distanciaProfundidad) * 1.35;
+
         camara.position.set(0, 0, distancia);
-        camara.lookAt(0, 0, 0);
-        camara.near = Math.max(maximo / 10000, 0.001);
-        camara.far = Math.max(maximo * 100, 1000);
+        camara.lookAt(objetivo);
+        camara.near = Math.max(Math.max(dimensionesModelo.x, dimensionesModelo.y, dimensionesModelo.z) / 10000, 0.001);
+        camara.far = Math.max(distancia * 100, 1000);
         camara.updateProjectionMatrix();
-        controles.minDistance = Math.max(maximo * 0.3, 0.1);
+
+        controles.target.copy(objetivo);
+        controles.minDistance = Math.max(distancia * 0.15, 0.1);
         controles.maxDistance = distancia * 5;
         controles.update();
-        if (estado) estado.style.display = "none";
-        ajustarTamano();
-        console.log("Gekko cargado y centrado.", tamano);
-    }, (progreso) => {
-        if (estado && progreso.total > 0) {
-            estado.textContent = "CARGANDO MODELO... " +
-                Math.round((progreso.loaded / progreso.total) * 100) + "%";
+    }
+
+    const cargador = new GLTFLoader();
+    cargador.load(
+        "./MODELOS/gekkofinal.2.glb",
+        (glb) => {
+            const modelo = glb.scene;
+            escena.add(modelo);
+
+            const caja = new THREE.Box3().setFromObject(modelo);
+            const centro = caja.getCenter(new THREE.Vector3());
+            dimensionesModelo = caja.getSize(new THREE.Vector3());
+            modelo.position.sub(centro);
+
+            encuadrarModelo();
+            if (estado) estado.style.display = "none";
+            console.log("Gekko cargado correctamente.", dimensionesModelo);
+        },
+        (progreso) => {
+            if (estado && progreso.total > 0) {
+                estado.textContent = "CARGANDO MODELO... " +
+                    Math.round((progreso.loaded / progreso.total) * 100) + "%";
+            }
+        },
+        (error) => {
+            console.error("Error al cargar Gekko:", error);
+            if (estado) {
+                estado.style.display = "block";
+                estado.textContent = "ERROR AL CARGAR EL MODELO. REVISA LA CONSOLA.";
+            }
         }
-    }, (error) => {
-        console.error("Error al cargar Gekko:", error);
-        if (estado) estado.textContent = "ERROR AL CARGAR EL MODELO. REVISA LA CONSOLA.";
-    });
+    );
 
     function ajustarTamano() {
         const ancho = contenedor.clientWidth;
         const alto = contenedor.clientHeight;
         if (ancho <= 0 || alto <= 0) return;
         renderizador.setSize(ancho, alto);
-        camara.aspect = ancho / alto;
-        camara.updateProjectionMatrix();
+        encuadrarModelo();
     }
 
     const observador = new ResizeObserver(ajustarTamano);
