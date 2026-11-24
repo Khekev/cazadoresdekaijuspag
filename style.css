@@ -91,6 +91,19 @@ a {
     gap: 35px;
 }
 
+.navbar nav .brand-mark {
+    display: flex;
+    align-items: center;
+    margin-right: -20px;
+}
+
+.navbar nav .brand-mark img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.18));
+}
+
 .navbar nav a {
     position: relative;
 
