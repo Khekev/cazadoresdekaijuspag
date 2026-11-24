@@ -1110,6 +1110,11 @@ a {
     line-height: 1.9;
 }
 
+.survey-button {
+    margin-top: 18px;
+    background: transparent;
+}
+
 /* 
    BOTÓN JUGAR AHORA — MÁS GRANDE
 */
